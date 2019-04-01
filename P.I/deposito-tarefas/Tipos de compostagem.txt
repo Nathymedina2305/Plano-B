@@ -1,0 +1,28 @@
+Existem dois tipos de processos de compostagem, a que ocorre a presença
+do oxigênio do ar, chamada de Aeróbia, e outra sem a presença do oxigênio,
+chamada de Anaeróbia.
+
+A digestão Aeróbia é um processo de decomposição orgânica onde as bactérias
+aeróbicas, que apenas sobrevivem na presença de oxigênio, conseguem rapidamente
+decompor os resíduos orgânicos, tendo como produtos o gás carbônico CO2 e água.
+Este processo ocorre com alguma celeridade e produz calor.
+
+Na compostagem anaeróbia a decomposição é realizada por micoorganismos que podem
+viver em ambientes sem a presença de oxigênio; ocorre em baixa temperatura, 
+com exalação de fortes odores, e leva mais tempo até que a matéria orgânica se 
+estabilize.
+
+COLOCAR ISSO NO DOC CONTEXTO DE NEGOCIO
+
+Antes de começar a falar como que funciona no processo de compostagem, é preciso saber os tipos de processo que existem.
+
+Existem dois tipos de processos de compostagem, a que ocorre a presença do oxigênio do ar, chamada de Aeróbia, e a outra sem a presença do oxigênio, chamada de Anaeróbia.
+
+A digestão aeróbia é um processo de decomposição da matéria orgânica onde as bactérias aeróbicas necessitam de presença de oxigênio para rapidamente decompor os resíduos orgânicos tendo como produtos o gás carbônico CO2 e agua.
+Na compostagem anaeróbica a decomposição é realizada por microrganismos que podem sobreviver sem a presença de oxigênio, ocorre em baixa temperatura mas exala fortes odores e leva mais tempo para estabilizar a matéria orgânica.
+
+
+
+Bibliográfia:
+http://www.resol.com.br/cartilha8/capitulo12b2.php
+http://meioambiente.culturamix.com/desenvolvimento-sustentavel/a-compostagem-e-seus-diversos-tipos

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Simulador Financeiro</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script type="text/javascript">
+		function conta(){
+			var composteira = 189.00;
+			var arduino = 27.50;
+			var sensoTemp = 12.90;
+			var sensoUmi = 15.00;
+			var internet = 245.50;
+			var implantacao = 1470.00;
+			var mensalidade;
+
+
+			if (document.getElementById('aberto').checked==true && document.getElementById('intsim').checked==true) {
+				var conta = Number(qtdcomposteiras.value) * Number(arduino) +  Number(qtdcomposteiras.value) * Number(sensoUmi) + Number(implantacao);
+
+			}else if (document.getElementById('fechado').checked==true && document.getElementById('intsim').checked==true) {
+				var conta = Number(qtdcomposteiras.value) * Number(arduino) +  Number(qtdcomposteiras.value) * Number(sensoUmi) + Number(sensoTemp) * 4 + Number(implantacao);
+
+			}else if (document.getElementById('aberto').checked==true && document.getElementById('intnao').checked==true) {
+				var conta = arduino * Number(qtdcomposteiras.value) + sensoUmi * Number(qtdcomposteiras.value)+ internet + implantacao;
+
+			}else if (document.getElementById('fechado').checked==true && document.getElementById('intnao').checked==true) {
+				var conta = arduino * Number(qtdcomposteiras.value) + sensoUmi * Number(qtdcomposteiras.value) + 
+				sensoTemp * 4 + internet + implantacao;
+
+			}
+
+			// Calculo salario anual dos fucionários atuais
+			var funci = qtdfunc.value;
+			var salafunc = teste.value;
+			
+			var anosalario = (funci * salafunc) * 12;
+
+			var salarioFuncFormatado = anosalario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+			divsala.innerHTML = `Salário Anual dos seus Funcionários: <b>${salarioFuncFormatado}</b>`;
+
+			// Calculo da mensalide do serviço
+			var mensalidadeConta = (conta - sensoUmi - sensoTemp - arduino - implantacao + Number(qtdcomposteiras.value * (composteira / 2)));
+
+			var mensalidadeFormatado = mensalidadeConta.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+
+			// Calculo do preço de implantação
+			conta = conta + mensalidadeConta;
+
+			var formatadoConta = conta.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+			// Mostrar preço de implantação + preço da mensalidade
+			divpreco.innerHTML = `Preço total da implantação do serviço: <b>${formatadoConta}</b>, a mensalidade é de: <b>${mensalidadeFormatado}</b>`;
+
+			// Calculo da mensalidade anual do serviço
+			var mensalidadeAnualConta = (mensalidadeConta * 12);
+
+			// Conta do calculo da mensalidade anual e economia do cliente
+			var economia = (anosalario - mensalidadeAnualConta);
+
+			var economiaFormatado = economia.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+			diveco.innerHTML = `Sua economia usando nosso serviço de controle de compostagem por meio das nossas composterias inteligentes é de: <b>${economiaFormatado}</b> por ano!`;			
+
+		}
+
+		function showhide(){
+			if(document.getElementById('funcsim').checked==true){
+						document.getElementById('teste').style.display='block';
+						document.getElementById('pagofunc').style.display='block';
+						document.getElementById('qtdfuncionarios').style.display='block';
+						document.getElementById('qtdfunc').style.display='block';
+						document.getElementById('texto2').style.display='block';
+						document.getElementById('divsala').style.display='block';
+						document.getElementById('texto3').style.display='block';
+						document.getElementById('diveco').style.display='block';
+
+				}else if (document.getElementById('funcnao').checked==true){	
+						document.getElementById('teste').style.display='none';
+						document.getElementById('pagofunc').style.display='none';
+						document.getElementById('qtdfuncionarios').style.display='none';
+						document.getElementById('qtdfunc').style.display='none';
+						document.getElementById('teste').value = "0";
+						document.getElementById('qtdfunc').value = "0";
+						document.getElementById('texto2').style.display='none';
+						document.getElementById('divsala').style.display='none';
+						document.getElementById('texto3').style.display='none';
+						document.getElementById('diveco').style.display='none';
+				}
+
+		}
+
+	</script>
+</head>
+
+<body>
+
+	<div class="navbar navbar-expand-lg navbar-dark bg-info text-white">
+
+		<!-- Logo -->
+		<a href="index.html" class="navbar-brand">
+			<span id="grupo">Grupo</span><span id="foxtech">FoxTech</span>
+		</a>
+
+		<!-- Menu Hamburguer -->
+		<button class="navbar-toggler" style="color: white;" data-toggle="collapse" data-target="#navegacao">
+			<span>
+				<i class="fa fa-bars fa-1x" id="btMenu"></i>
+			</span>
+		</button>
+
+		<!-- Navegãção -->
+		<div class="collapse navbar-collapse" id="navegacao">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a href="index.html" class="nav-link text-light">
+						<button class="btn btn-outline-light" type="button">
+							<span>PÁGINA INICIAL</span>
+						</button>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="sobre.html" class="nav-link text-light">
+						<button class="btn btn-outline-light" type="button">
+							<span>SOBRE</span>
+						</button>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="simulador.html" class="nav-link text-light">
+						<button class="btn btn-outline-light" type="button">
+							<span>SIMULADOR FINANCEIRO</span>
+						</button>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="contato.html" class="nav-link text-light">
+						<button class="btn btn-outline-light" type="button">
+							<span>CONTATO</span>
+						</button>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="card mx-auto card-principal">
+
+				<div class="card-header bg-info text-light">
+					
+					<h2>Aqui você poderá simular um orçamento de implantação das nossas composteiras inteligentes em sua empresa!</h2>
+
+				</div>
+
+				<div class="card-body">
+					
+					<h3>Quantas composteiras sua empresa possui?</h3>
+					<input type="number" id="qtdcomposteiras" min="0" class="form-control col-3 float-left" id="qtdcomposteiras" value="1" min="1">
+					<br>
+					<br>
+					<br>
+					<h3>Possui funcionários para controlar as composteiras?</h3>
+					<input type="radio" id="funcsim" name="funcionarios" onclick="showhide()" checked>Sim
+					<input type="radio" id="funcnao" name="funcionarios" onclick="showhide()">Não
+					<br>
+					<br> 
+						<h3 id="qtdfuncionarios">Quantos Funcionários</h3>
+						<input type="number" min="0" class="form-control col-3 float-left" id="qtdfunc" value="0">
+					<br>
+					<br> 
+					<br> 
+						<h3 id="pagofunc">Quanto é pago por cada Funcionário</h3>
+						<input type="number" min="0" class="form-control col-3 float-left" id="teste" value="0">
+					<br>
+					<br>
+					<br> 
+						<h3 id="local">Local é aberto?</h3>
+					<input type="radio" id="aberto" name="local">Sim
+					<input type="radio" id ="fechado" name="local">Não
+					<br>
+					<br>
+					<h3>Possui Internet?</h3>
+					<input type="radio" id="intsim" name="internet">Sim
+					<input type="radio" id="intnao" name="internet">Não
+					<br>
+					<br>
+					<center><button type="button" class="btn btn-outline-info" onclick="conta()">Fazer Orçamento</button></center>
+					<br>
+					<br>
+					<br>
+						<h3 id="texto1">Implantação do serviço</h3>
+
+						<h3 id="texto2">Salário Funcionários</h3>
+
+						<h3 id="texto3">Economia</h3>
+
+					<div id="divpreco"></div>
+			
+					<div id="divsala"></div>
+					
+					<div id="diveco"></div>	
+				</div>
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+				
+
+
+	<footer>
+
+		<div class="container-fluid padding bg-info">
+
+			<div class="row">
+
+				<div class="col-md-4 text-center">
+
+					<div class="espacamento-nome">
+
+						<hr class="bg-light">
+						<a href="" class="card-link">
+							<span class="grupo text-light titulo-rodape">Grupo</span><span
+								class="titulo-rodape foxtech text-light">FoxTech</span>
+						</a>
+					</div>
+
+					<hr class="bg-light">
+
+					<p class="text-light">fale.conosco@foxtech.com.br</p>
+					<p class="text-light">(11) 4002-8922</p>
+					<p class="text-light">Atendimento em dias úteis, das 13h às 19h.</p>
+
+
+				</div>
+
+				<div class="col-md-4 text-center">
+
+					<div class="espacamento-nome">
+						<hr class="bg-light">
+						<h5 class="text-white titulo-rodape">Onde Estamos</h5>
+					</div>
+
+					<hr class="bg-light">
+
+					<p class="text-light">Rua Haddock Lobo, 595</p>
+					<p class="text-light">Av. Paulista, São Paulo, 01414-002</p>
+
+				</div>
+
+				<div class="col-md-4 text-center">
+
+					<div class="espacamento-nome">
+						<hr class="bg-light">
+						<h5 class="text-white titulo-rodape">Menu</h5>
+					</div>
+
+					<hr class="bg-light">
+
+					<div>
+						<ul>
+							<li><a href="index.html" class="card-link text-light">Página Inicial</a></li>
+							<li><a href="sobre.html" class="card-link text-light">Sobre</a></li>
+							<li><a href="simulador.html" class="card-link text-light">Simulador Financeiro</a></li>
+							<li><a href="contato.html" class="card-link text-light">Contato</a></li>
+						</ul>
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</footer>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="bootstrap4/js/bootstrap.min.js"></script>
+</body>
+
+</html>

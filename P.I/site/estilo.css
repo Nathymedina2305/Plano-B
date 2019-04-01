@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Anton|Russo+One|Source+Sans+Pro');
+
+	/*inicio titulo*/
+
+	#grupo{
+		width: 140px;
+		margin-left: 25px;
+		font-family: 'Montserrat', serif;
+		font-size: 40px;
+		color: white;
+	}
+	#foxtech{
+		font-family: 'Russo One', cursive;
+		font-size: 40px;
+		color: white;
+}
+	#logo{
+		width: 200px;
+	}
+	#foxinicial{
+		width: 350px;
+		margin-top: 50px;
+	}
+	body{
+		background-color: #F7F7EB;
+	}
+
+	/*fim titulo*/
+
+	/*Inicio página principal*/
+	.div-foto{
+		text-align: center;
+		height: 500px;
+		background-image: url('https://www.casablancaturismo.com.br/2017/wp-content/uploads/2016/12/tecnologiacb.jpg');
+		background-repeat: no-repeat;
+		background-position: center;
+		filter: blur(4px);
+		background-size: cover;
+	}
+
+	.div-titulo{
+		position: absolute;
+		margin-top: -35%;
+		width: 100%;
+		text-align: center;
+	}
+
+
+	.div-meio{
+		height: 520px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		background-color: #F7F7EB;
+	}
+	.div-titulo-meio{
+		padding-top: 50px;
+		margin-bottom: 20px;
+		background-color: #F7F7EB;
+	}
+	.font-titulo-meio{
+		font-size: 30px;
+	}
+
+	.caixa{
+		border: solid 3px;
+		height: 400px; 
+		width: 300px;
+		text-align: center;
+		background-color: #FFFFFF;
+		border-radius: 20px;
+	}
+	.titulo-caixas{
+		margin-top: 20px;
+	}
+
+	.btn-caixas{
+		width: 200px;
+	}
+	.btn-caixa-2{
+		margin-top: 40px;
+	}
+	.btn-caixa-3{
+		margin-top: 80px;
+	}
+
+
+
+
+	/*Fim página principal*/
+
+
+	/*inicio footer*/
+
+	.titulo-rodape{
+		font-size: 25px;
+	}
+
+	.espacamento-nome{
+		margin-top: 20px;
+		height: 47px;
+	}
+
+	ul{
+		list-style-type: none;
+		text-align: center;
+	}
+
+
+	/*final footer*/
+
+
+	/*inicio estilo simulador*/
+
+		.card-principal{
+			margin-top: 4em;
+			margin-bottom: 4em;
+			width: 100%;
+			padding: 10px;
+		}
+
+		#teste,#qtdcomposteiras,#areacompostagem,#qtdfunc{
+			height:60px;
+			text-align:center;
+			font-size:1.5em;
+			margin:0 auto;
+			font-weight:700;
+			outline: 0;
+			border-width: 0 0 2px;
+		}
+
+		#divpreco{
+			width: 300px;
+			height: 100px;
+			margin-left: 30px;
+
+		}
+
+		#divsala{
+			width: 300px;
+			height: 100px;
+			margin-left: 390px;
+			margin-top: -100px;
+
+		}
+
+		#diveco{
+			width: 300px;
+			height: 100px;
+			margin-left: 750px;
+			margin-top: -100px;
+
+
+		}
+
+		#texto2{
+			margin-left: 390px;
+			margin-top: -40px;
+		}
+
+		#texto3{
+			margin-left: 750px;
+			margin-top: -40px;
+		}
+
+	/*fim estilo simulador*/
